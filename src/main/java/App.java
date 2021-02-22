@@ -42,7 +42,13 @@ public class App {
             return new ModelAndView(model, "assert.hbs");
         }, new HandlebarsTemplateEngine());
 
-
+        /*This route retrieves current instances (squads) present*/
+        get("/squads", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Squad> squads = Squad.getSquads();
+            model.put("squads", squads);
+            return new ModelAndView(model, "squad.hbs");
+        }, new HandlebarsTemplateEngine());
 
 
     };
