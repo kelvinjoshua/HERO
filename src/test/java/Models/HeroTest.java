@@ -18,7 +18,7 @@ public class HeroTest {
 
     @Test
     public void instantiatesCorrectly_true() throws Exception{
-        Hero testSup = new Hero("A-train",26,"SuperSpeed","compoundV","rapidHealing");
+        Hero testSup = new Hero("A-train",26,"SuperSpeed","compoundV","Rapid healing");
         assertTrue(testSup instanceof Hero);
     }
 }
