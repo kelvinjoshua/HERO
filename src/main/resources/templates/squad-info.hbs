@@ -1,0 +1,34 @@
+
+{{#partial "content"}}
+    <div class="card">
+        <div class="card-header">
+            <h1 class="text-center card-title" id="squad">Squad name: {{squad.name}}</h1>
+        </div>
+        <div class="card-body">
+            <h3 class="text-center" id="squadstuff">Squad size: {{squad.size}}</h3>
+            <h3 class="text-center" id="squadstuff">Squad cause: {{squad.cause}}</h3>
+        </div>
+
+    </div>
+
+
+    {{#if heroes-present}}
+        <h2>Heroes in {{squad.name}}</h2>
+        <ol>
+            <!-- Loop through hour heroes collection -->
+            {{#each heroes-present}}
+                <li class="card">
+
+                    <a href="/heroes/{{id}}"><p id="hero-text">{{name}}</p></a>
+                </li>
+                <br><br>
+            {{/each}}
+        </ol>
+    {{else}}
+        <!-- If there isnt a hero in the arraylist,alert message,then redirect,let user manually insert a hero-->
+        <p class="alert alert-danger card-title">There are no heroes in {{squad.name}} squad</p>
+    {{/if}}
+
+    <a href="/heroes/new" class="btn btn-lg btn-success col-md-6"> Add a hero now!!</a>
+{{/partial}}
+{{> layout.hbs}}
