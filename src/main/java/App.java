@@ -86,5 +86,12 @@ public class App {
             return new ModelAndView(model, "assert-hero.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/heroes",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            List<Hero> heroes = Hero.getAll();
+            model.put("heroes", heroes);
+            return new ModelAndView(model, "hero.hbs");
+        }, new HandlebarsTemplateEngine());
+
     };
 }
