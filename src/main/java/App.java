@@ -42,13 +42,15 @@ public class App {
             return new ModelAndView(model, "assert.hbs");
         }, new HandlebarsTemplateEngine());
 
-        /*This route retrieves current instances (squads) present*/
+
+        /*This route retrieves view with the current instances (squads) present*/
         get("/squads", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             ArrayList<Squad> squads = Squad.getSquads();
             model.put("squads", squads);
             return new ModelAndView(model, "squad.hbs");
         }, new HandlebarsTemplateEngine());
+
 
         /*Restful routing to present specific data that we want available to the user*/
         get("squads/:id", (request, response) -> {
@@ -60,6 +62,10 @@ public class App {
             return new ModelAndView(model,"squad-info.hbs");
         }, new HandlebarsTemplateEngine());
 
-
+        get("heroes/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("squads", Squad.getSquads());
+            return new ModelAndView(model, "create-hero.hbs");
+        }, new HandlebarsTemplateEngine());
     };
 }
