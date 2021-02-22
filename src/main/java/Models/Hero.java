@@ -1,5 +1,5 @@
 package Models;
-
+import java.util.List;
 import java.util.ArrayList;
 
 public class Hero {
@@ -9,7 +9,7 @@ public class Hero {
     private String specialAbility;
     private String weakness;
     private String ability;
-    private static ArrayList <Hero> instances = new ArrayList<>();
+    private static List <Hero> instances = new ArrayList<>();
 
     public Hero(String name,int Age,String specialAbility,String weakness,String ability){
         this.name =name;
@@ -19,4 +19,28 @@ public class Hero {
         this.ability = ability;
         instances.add(this);/*every instance is automatically added to our arraylist*/
     }
+
+    public String getName(){
+
+    };
+
+    public int getAge(){
+
+    };
+
+    public String getSpecialAbility(){
+
+    };
+
+    public String getWeakness(){
+
+    };
+
+    public String getAbility(){
+
+    }
+
+    public static List<Hero> getAll(){
+
+    };
 }
