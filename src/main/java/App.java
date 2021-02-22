@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import Models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
@@ -21,6 +23,23 @@ public class App {
         get("/squads/new",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "new-squad.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/squads", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Squad> squads = request.session().attribute("squads");
+            if(squads == null) {
+                squads = new ArrayList<Squad>();
+                request.session().attribute("squads", squads);
+            }
+            /*QueryParameters from the url*/
+            String name = request.queryParams("name");
+            int size = Integer.parseInt(request.queryParams("size"));
+            String cause = request.queryParams("cause");
+            /*Create a new Squad instance*/
+            Squad newSquad = new Squad(name, size, cause);
+            squads.add(newSquad);/*Add instance to the arraylist*/
+            return new ModelAndView(model, "assert.hbs");
         }, new HandlebarsTemplateEngine());
 
 
