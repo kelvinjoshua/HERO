@@ -21,26 +21,27 @@ public class Hero {
     }
 
     public String getName(){
-
+        return name;
     };
 
     public int getAge(){
-
+        return Age;
     };
 
     public String getSpecialAbility(){
-
+        return specialAbility;
     };
 
     public String getWeakness(){
+        return weakness;
 
     };
 
     public String getAbility(){
-
+        return ability;
     }
 
     public static List<Hero> getAll(){
-
+        return instances;
     };
 }
