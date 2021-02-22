@@ -9,6 +9,7 @@ public class Hero {
     private String specialAbility;
     private String weakness;
     private String ability;
+    private int id;
     private static List <Hero> instances = new ArrayList<>();
 
     public Hero(String name,int Age,String specialAbility,String weakness,String ability){
@@ -17,6 +18,7 @@ public class Hero {
         this.specialAbility =specialAbility;
         this.weakness = weakness;
         this.ability = ability;
+        this.id = instances.size();
         instances.add(this);/*every instance is automatically added to our arraylist*/
     }
 
@@ -39,6 +41,10 @@ public class Hero {
 
     public String getAbility(){
         return ability;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public static List<Hero> getAll(){

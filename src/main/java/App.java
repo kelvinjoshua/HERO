@@ -14,7 +14,11 @@ public class App {
         /*Route route for our app- View renders what is displayed to our user*/
         get("/", (request, response) -> {
             Map<String,Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model, "index.hbs");
+            return new ModelAndView(model,"first-view.hbs");
         }, new HandlebarsTemplateEngine());
+
+
+
+
     };
 }
