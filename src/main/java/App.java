@@ -67,5 +67,24 @@ public class App {
             model.put("squads", Squad.getSquads());
             return new ModelAndView(model, "create-hero.hbs");
         }, new HandlebarsTemplateEngine());
+
+        post("/heroes", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Hero> heroes = request.session().attribute("heroes");
+            if (heroes == null) {
+                heroes = new ArrayList<Hero>();
+                request.session().attribute("heroes", heroes);
+            }
+
+            String name = request.queryParams("name");
+            int age = Integer.parseInt(request.queryParams("age"));
+            String specialAb = request.queryParams("strength");
+            String weakness = request.queryParams("weakness");
+            String ability = request.queryParams("ability");
+            Hero newAddition = new Hero(name,age,specialAb,weakness,ability);
+            heroes.add(newAddition);
+            return new ModelAndView(model, "assert-hero.hbs");
+        }, new HandlebarsTemplateEngine());
+
     };
 }
