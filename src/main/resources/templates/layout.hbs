@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Heroes | welcome{{/block}}</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div class="color">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="/">Home</a></li>
+        <li role="presentation"><a href="/hero/new">Add a New Hero</a></li>
+        <li role="presentation"><a href="/squads/list">Add a Squad</a></li>
+    </ul>
+    <div class="container">
+        <!--begin main template-->
+        <div class="page-header">
+
+            <h1 style="text-align:center;">World Of Heroes</h1>
+        </div>
+        <div class="col-md-12">
+            {{#block "content"}}
+            {{/block}}
+        </div>
+    </div>
+</div>
+<!--end main template-->
+{{#block "footer"}}
+    </body>
+    </html>
+{{/block}}

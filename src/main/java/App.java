@@ -11,7 +11,7 @@ import static spark.Spark.*;
 public class App {
     public  static void main(String[] args){
         staticFileLocation("/public");
-        /*Route route for our app*/
+        /*Route route for our app- View renders what is displayed to our user*/
         get("/", (request, response) -> {
             Map<String,Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "index.hbs");
