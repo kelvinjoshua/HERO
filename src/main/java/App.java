@@ -50,6 +50,16 @@ public class App {
             return new ModelAndView(model, "squad.hbs");
         }, new HandlebarsTemplateEngine());
 
+        /*Restful routing to present specific data that we want available to the user*/
+        get("squads/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
+           /*key-value pairs*/
+            model.put("squad", squad);
+            model.put("heroes-present",squad.getAll());
+            return new ModelAndView(model,"squad-info.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
     };
 }
