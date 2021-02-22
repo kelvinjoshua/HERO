@@ -5,5 +5,5 @@ body{
     border-bottom: 1px solid black;
 }
 .active-link a{
-    color: black !important;
+    color: black !important; /*Override default color*/
 }
