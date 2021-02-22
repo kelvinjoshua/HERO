@@ -8,19 +8,20 @@ import java.util.Map;
 import Models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+
 import static spark.Spark.*;
 
 public class App {
-    public  static void main(String[] args){
+    public static void main(String[] args) {
         staticFileLocation("/public");
         /*Route route for our app- View renders what is displayed to our user*/
         get("/", (request, response) -> {
-            Map<String,Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model,"first-view.hbs");
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "first-view.hbs");
         }, new HandlebarsTemplateEngine());
 
         /*Route to retrieve content inputted by the user*/
-        get("/squads/new",(request, response) -> {
+        get("/squads/new", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "new-squad.hbs");
         }, new HandlebarsTemplateEngine());
@@ -28,7 +29,7 @@ public class App {
         post("/squads", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             ArrayList<Squad> squads = request.session().attribute("squads");
-            if(squads == null) {
+            if (squads == null) {
                 squads = new ArrayList<Squad>();
                 request.session().attribute("squads", squads);
             }
@@ -56,10 +57,10 @@ public class App {
         get("squads/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
-           /*key-value pairs*/
+            /*key-value pairs*/
             model.put("squad", squad);
-            model.put("heroes-present",squad.getAll());
-            return new ModelAndView(model,"squad-info.hbs");
+            model.put("heroes-present", squad.getAll());
+            return new ModelAndView(model, "squad-info.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("heroes/new", (request, response) -> {
@@ -81,17 +82,19 @@ public class App {
             String specialAb = request.queryParams("strength");
             String weakness = request.queryParams("weakness");
             String ability = request.queryParams("ability");
-            Hero newAddition = new Hero(name,age,specialAb,weakness,ability);
+            Hero newAddition = new Hero(name, age, specialAb, weakness, ability);
             heroes.add(newAddition);
             return new ModelAndView(model, "assert-hero.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/heroes",(request, response) -> {
+        get("/heroes", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             List<Hero> heroes = Hero.getAll();
             model.put("heroes", heroes);
             return new ModelAndView(model, "hero.hbs");
         }, new HandlebarsTemplateEngine());
 
-    };
+    }
+
+    ;
 }

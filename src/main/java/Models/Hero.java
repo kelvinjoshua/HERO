@@ -1,4 +1,5 @@
 package Models;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -10,36 +11,44 @@ public class Hero {
     private String weakness;
     private String ability;
     private int id;
-    private static List <Hero> instances = new ArrayList<>();
+    private static List<Hero> instances = new ArrayList<>();
 
-    public Hero(String name,int Age,String specialAbility,String weakness,String ability){
-        this.name =name;
+    public Hero(String name, int Age, String specialAbility, String weakness, String ability) {
+        this.name = name;
         this.Age = Age;
-        this.specialAbility =specialAbility;
+        this.specialAbility = specialAbility;
         this.weakness = weakness;
         this.ability = ability;
         this.id = instances.size();
         instances.add(this);/*every instance is automatically added to our arraylist*/
     }
 
-    public String getName(){
+    public String getName() {
         return name;
-    };
+    }
 
-    public int getAge(){
+    ;
+
+    public int getAge() {
         return Age;
-    };
+    }
 
-    public String getSpecialAbility(){
+    ;
+
+    public String getSpecialAbility() {
         return specialAbility;
-    };
+    }
 
-    public String getWeakness(){
+    ;
+
+    public String getWeakness() {
         return weakness;
 
-    };
+    }
 
-    public String getAbility(){
+    ;
+
+    public String getAbility() {
         return ability;
     }
 
@@ -47,7 +56,9 @@ public class Hero {
         return id;
     }
 
-    public static List<Hero> getAll(){
+    public static List<Hero> getAll() {
         return instances;
-    };
+    }
+
+    ;
 }
