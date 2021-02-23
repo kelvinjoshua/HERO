@@ -14,7 +14,7 @@
     {{#if heroes-present}}
         <h2>Heroes in {{squad.name}}</h2>
         <ol>
-            <!-- Loop through hour heroes collection -->
+            <!-- Loop through our heroes collection -->
             {{#each heroes-present}}
                 <li class="card">
 
@@ -24,10 +24,9 @@
             {{/each}}
         </ol>
     {{else}}
-        <!-- If there isnt a hero in the arraylist,alert message,then redirect,let user manually insert a hero-->
         <p class="alert alert-danger card-title">There are no heroes in {{squad.name}} squad</p>
     {{/if}}
 
-    <a href="/heroes/new" class="btn btn-lg btn-success col-md-6"> Add a hero now!!</a>
+    <a href="/heroes/new" class="btn btn-lg btn-success col-md-6"> Add another hero</a>
 {{/partial}}
 {{> layout.hbs}}

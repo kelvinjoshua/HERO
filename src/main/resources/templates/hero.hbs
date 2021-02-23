@@ -1,11 +1,16 @@
-
 {{#partial "content"}}
     {{#if heroes}}
         <ul>
             {{#each heroes}}
                 <li class="card col-lg-6">
                     <h3 class="card-title" id="hero">Name:{{name}}</h3>
-                    <a href="/heroes/{{id}}" class="btn btn-outline-warning">More details</a>
+                    <p>Hero details</p>
+                    <ul type="b">
+                        <li>Age:{{age}}</li>
+                        <li>Special Ability:{{specialAbility}}</li>
+                        <li>Weakness:{{weakness}}</li>
+                        <li>Ability/ies: {{ability}}</li>
+                    </ul>
                     <a href="/squads/{{squadId}}" class="btn btn-outline-danger">View squad</a>
                 </li>
                 <br><br>
@@ -20,7 +25,7 @@
         </div>
         <br><br>
     {{/if}}
-    <a href="/heroes/new" class="btn btn-lg btn-outline-primary col-md-5">Create  hero here</a>
+    <a href="/heroes/new" class="btn btn-lg btn-outline-primary col-md-5">Create hero here</a>
 
 {{/partial}}
 

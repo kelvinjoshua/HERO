@@ -95,12 +95,12 @@ public class App {
             return new ModelAndView(model, "hero.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/heroes/:id",(request, response) -> {
+        get("/heroes/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Hero hero = Hero.findHero(Integer.parseInt(request.params(":id")));
             Squad squad = Squad.find(hero.getSquadId());
             model.put("hero", hero);
-            model.put("squad",squad);
+            model.put("squad", squad);
             return new ModelAndView(model, "hero-profile.hbs");
         }, new HandlebarsTemplateEngine());
 

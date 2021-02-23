@@ -1,7 +1,7 @@
 body{
     font-family: 'Gloria Hallelujah', cursive;
+    font-size: 20px;
     background-color: white;
-
 }
 .navbar {
     display: flex;
@@ -22,7 +22,7 @@ body{
 }
 
 .active-link a {
-  color: black !important;/*to overide default*/
+  color: lightseagreen !important;/*to overide default*/
 }
 .link a {
   font-size:26px;
