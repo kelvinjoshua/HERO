@@ -1,9 +1,0 @@
-body{
-    font-family: 'Gloria Hallelujah', cursive;
-}
-.active-link {
-    border-bottom: 1px solid black;
-}
-.active-link a{
-    color: black !important; /*Override default color*/
-}

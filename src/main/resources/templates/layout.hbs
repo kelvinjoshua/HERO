@@ -6,22 +6,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="color">
-    <ul class="nav nav-tabs">
-        <li class="active-link"><a href="/">HOME</a></li>
-        <li class="active-link"><a href="/heroes">Add New Hero</a></li>
-        <li class="active-link"><a href="/squads">Squad</a></li>
-    </ul>
-    <div class="container">
-        <!--begin main template-->
-        <div class="col-md-12">
-            {{#block "content"}}
-            {{/block}}
-        </div>
-    </div>
+<div class="navbar">
+        <div class="link active-link"><a href="/">HOME</a></div>
+        <div class="link"><a href="/heroes">Add New Hero</a></div>
+        <div class="link"><a href="/squads">Squad</a></div>
+
+</div>
+<div class="container">
+    <!--begin main template-->
+    {{#block "content"}}
+
+    {{/block}}
 </div>
 <!--end main template-->
 {{#block "footer"}}

@@ -1,17 +1,57 @@
 {{#partial "content"}}
-    <form class="form-group" action="/heroes" method=post>
-        <label for="name">Name </label>
-        <input class="form-control" name="name" type="text" placeholder="Hero's name/Alias" required>
-        <label for="age">Age </label>
-        <input class="form-control" name="age" type="number" placeholder="hero's age" required>
-        <label for="specialAbility">Special Ability </label>
-        <input class="form-control" name="strength" type="text" placeholder="specialAbility" required>
-        <label for="weakness">Weakness </label>
-        <input class="form-control" name="weakness" type="text" placeholder="hero's weakness" required>
-        <label for="ability">Ability </label>
-        <input class="form-control" name="ability" type="text" placeholder="Any abilities." required>
-        <button type="submit" class="btn btn-warning"> Create Hero</button>
+
+    <div class="background">
+        <img src="/images/marvel black and white.jpg" style="background-image">
+    </div>
+
+    <style>
+    .body{
+    background-color: black;
+        }
+       .background img{
+            height:100%;
+            width: 100%;
+       }
+
+      .form-group {
+        font-size:24px;
+        }
+
+    </style>
+    <form action="/heroes" method=post>
+        <div class="form-group">
+            <label for="name">Name </label>
+            <input class="form-control" name="name" type="text" placeholder="Hero's name/Alias" required>
+            <label for="age">Age </label>
+            <input class="form-control" name="age" type="number" placeholder="hero's age" required>
+            <label for="specialAbility">Special Ability </label>
+            <input class="form-control" name="strength" type="text" placeholder="specialAbility" required>
+            <label for="weakness">Weakness </label>
+            <input class="form-control" name="weakness" type="text" placeholder="hero's weakness" required>
+            <label for="ability">Ability </label>
+            <input class="form-control" name="ability" type="text" placeholder="Any abilities." required>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label for="squadId" class="input-group-text"> Squad: </label>
+                </div>
+                <select class="custom-select" id="squadId" name="squadId" required>
+                    {{#each squads}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+
+            <button type="submit" class="btn btn-warning"> Create Hero</button>
+
+            </div>
+
+
+
+
     </form>
+
 {{/partial}}
+
 
 {{> layout.hbs}}

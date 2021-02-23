@@ -76,16 +76,17 @@ public class App {
                 heroes = new ArrayList<Hero>();
                 request.session().attribute("heroes", heroes);
             }
-
+            Squad squad = Squad.find(Integer.parseInt(request.queryParams("squadId")));
             String name = request.queryParams("name");
             int age = Integer.parseInt(request.queryParams("age"));
             String specialAb = request.queryParams("strength");
             String weakness = request.queryParams("weakness");
             String ability = request.queryParams("ability");
-            Hero newAddition = new Hero(name, age, specialAb, weakness, ability);
+            Hero newAddition = new Hero(name, age, specialAb, weakness, ability, squad.getId());//squad.getId()
             heroes.add(newAddition);
             return new ModelAndView(model, "assert-hero.hbs");
         }, new HandlebarsTemplateEngine());
+
 
         get("/heroes", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
@@ -93,6 +94,16 @@ public class App {
             model.put("heroes", heroes);
             return new ModelAndView(model, "hero.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/heroes/:id",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Hero hero = Hero.findHero(Integer.parseInt(request.params(":id")));
+            Squad squad = Squad.find(hero.getSquadId());
+            model.put("hero", hero);
+            model.put("squad",squad);
+            return new ModelAndView(model, "hero-profile.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
     }
 

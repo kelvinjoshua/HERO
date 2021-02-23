@@ -7,6 +7,7 @@ sourceCompatibility = 1.8
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+mainClassName = 'App'
 repositories {
     mavenCentral()
 }
@@ -16,5 +17,6 @@ dependencies {
     compile "com.sparkjava:spark-core:2.6.0"
     compile "com.sparkjava:spark-template-handlebars:2.5.5"
     compile 'org.slf4j:slf4j-simple:1.7.21'
+    compile 'com.sparkjava:spark-debug-tools:0.5'
 
 }

@@ -3,7 +3,67 @@
 {{/partial}}
 
 {{#partial "content"}}
+
+
+
+    <p align="center">An example of heroes and their attributes</p>
+    <div class="portfolio-items-wrapper">
+
+        <div class="portfolio-item">
+            <div class="background" style="background-image:url(/images/doctor-strange-poster.jpg)"></div>
+
+        </div>
+        <div class="portfolio-item">
+            <div class="background" style="background-image:url(/images/wolverine.jpg)"></div>
+
+        </div>
+
+        <div class="portfolio-item">
+            <div class="background" style="background-image:url(/images/superman.jpeg)"></div>
+
+        </div>
+
+
+    </div>
     <a href="/squads/new" class="btn btn-warning">Create the next justice society</a>
+        <style>
+            .portfolio-items-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            }
+            .portfolio-items-wrapper > div {
+    margin:10px;
+}
+            portfolio-item {
+  position: relative;
+}
+            .background{
+            background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 350px;
+  width: 100%;
+
+            }
+            p{
+
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+        </style>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 
 {{/partial}}
 
