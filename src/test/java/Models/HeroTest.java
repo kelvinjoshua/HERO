@@ -15,10 +15,12 @@ public class HeroTest {
     @After
     public void tearDown() throws Exception {
     }
-
+/*
     @Test
     public void instantiatesCorrectly_true() throws Exception{
         Hero testSup = new Hero("A-train",26,"SuperSpeed","compoundV","Rapid healing");
         assertTrue(testSup instanceof Hero);
     }
+    */
+
 }
