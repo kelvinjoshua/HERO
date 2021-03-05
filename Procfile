@@ -1,2 +1,2 @@
-web:java -jar target/myapp-1.0.0.jar
+web:java -jar target/kelvinnnbale-1.0.0.jar
 
