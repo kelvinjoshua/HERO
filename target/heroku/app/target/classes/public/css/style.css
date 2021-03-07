@@ -1,0 +1,40 @@
+body{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 20px;
+    background-color: white;
+}
+.navbar {
+    display: flex;
+    padding: 10px;
+
+}
+.navbar >div{
+    margin-right:20px;
+}
+.link {
+  height: 30px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+}
+
+.active-link {
+  border-bottom: 1px solid black;
+}
+
+.active-link a {
+  color: lightseagreen !important;/*to overide default*/
+}
+.link a {
+  font-size:26px;
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.link:hover {
+  border-bottom: 1px solid black;
+}
+
+.link a:hover {
+  color: black;
+}
