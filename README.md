@@ -7,12 +7,8 @@
 This application basically allows the user to enter a squad name e.g Avengers
 Specifiy the number of heros you want in squad, and cause e.g Fight the Cellestials.
 The user can then assign attributes to each hero in his squad, and view heroes present.
-## Setup requirements
-* Clone repository  https://github.com/kelvinjoshua/HERO.git in local directory of choice.
-* Open directory in intelliJ.
-* Ensure you are at the top hierachy of project,open in terminal.
-* Run gradle run.
-* The local host http://localhost:4567/ listens,and renders the live site.
+## live Site
+https://heroassemble.herokuapp.com/
 ## miscellaneous
 * If no fields are present when the site is deployed,click home link.
 * Create a squad first before creating a hero.(The routes are rendered in the order which they appear in App.java).
